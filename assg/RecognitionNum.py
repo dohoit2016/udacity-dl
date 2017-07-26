@@ -236,24 +236,21 @@ valid_dataset, valid_labels = randomize(valid_dataset, valid_labels)
 
 # Prediction
 
-train_num = 5000
-X_train = train_dataset[:train_num].reshape(-1, 28*28)
-y_train = train_labels[:train_num]
+# train_num = 5000
+# X_train = train_dataset.reshape(-1, 28*28)
+# y_train = train_labels
 
-logreg = LogisticRegression()
-logreg.fit(X_train, y_train)
+# logreg = LogisticRegression()
+# logreg.fit(X_train, y_train)
 
-valid_num = 1000
-X_valid = valid_dataset[:valid_num].reshape(-1, 28*28)
-y_valid = valid_labels[:valid_num]
+# X_valid = valid_dataset.reshape(-1, 28*28)
+# y_valid = valid_labels
 
-X_test = test_dataset.reshape(-1,28*28)
-y_test = test_labels
+# X_test = test_dataset.reshape(-1,28*28)
+# y_test = test_labels
 
 # valid_acc = sum(logreg.predict(X_valid) == y_valid)/len(y_valid)
-valid_acc = sum(logreg.predict(X_valid) == y_valid)/valid_num
-print("accuracy rate: %f" % valid_acc)
+# print("accuracy rate: %f" % valid_acc)
 
 # test_acc = sum(logreg.predict(X_test) == y_test)/len(y_test)
 # print("accuracy rate: %f" % test_acc)
-

@@ -213,26 +213,26 @@ valid_dataset, valid_labels = randomize(valid_dataset, valid_labels)
 # plt.imshow(train_dataset[0], cmap="Greys_r")
 # plt.show()
 
-# pickle_file = os.path.join(data_root, 'notMNIST.pickle')
+pickle_file = os.path.join(data_root, 'notMNIST.pickle')
 
-# try:
-# 	f = open(pickle_file, 'wb')
-# 	save = {
-# 		'train_dataset': train_dataset,
-# 		'train_labels': train_labels,
-# 		'valid_dataset': valid_dataset,
-# 		'valid_labels': valid_labels,
-# 		'test_dataset': test_dataset,
-# 		'test_labels': test_labels
-# 	}
-# 	pickle.dump(save, f, pickle.HIGHEST_PROTOCOL)
-# 	f.close()
-# except Exception as e:
-# 	print("File is not saved")
-# 	raise
+try:
+	f = open(pickle_file, 'wb')
+	save = {
+		'train_dataset': train_dataset,
+		'train_labels': train_labels,
+		'valid_dataset': valid_dataset,
+		'valid_labels': valid_labels,
+		'test_dataset': test_dataset,
+		'test_labels': test_labels
+	}
+	pickle.dump(save, f, pickle.HIGHEST_PROTOCOL)
+	f.close()
+except Exception as e:
+	print("File is not saved")
+	raise
 
-# statinfo = os.stat(pickle_file)
-# print("File size: ", statinfo.st_size)
+statinfo = os.stat(pickle_file)
+print("File size: ", statinfo.st_size)
 
 # Prediction
 
